@@ -24,6 +24,11 @@ public class GameListController {
         return gameListService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public GameListDTO findById(@PathVariable Long id) {
+        return gameListService.findById(id);
+    }
+
     @GetMapping("/{listId}/games")
     public List<GameMinDTO> findGames(@PathVariable Long listId) {
         return gameService.FindByGameList(listId);
